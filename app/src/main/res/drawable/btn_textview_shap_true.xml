@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--btn_textview背景样式-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:color="#BCD2EE" android:width="0.5dp"></stroke>
+    <corners android:radius="5dp"></corners>
+    <!--<solid android:color="#6495ED"></solid>-->
+    <gradient android:startColor="#BCD2EE" android:angle="90"></gradient>
+</shape>

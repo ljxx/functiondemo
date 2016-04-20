@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!--屏幕自适应大小-->
+    <dimen name="px5">5dp</dimen>
+    <dimen name="px10">10dp</dimen>
+
+    <!--字体大小-->
+    <dimen name="btn_textview">19sp</dimen>
+</resources>
