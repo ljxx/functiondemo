@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="www.function.com.functiondemo.ui.function.TwoDimensionCodeActivity">
+    tools:context=".ui.function.twocode.TwoDimensionCodeActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

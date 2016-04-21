@@ -12,7 +12,7 @@ import www.function.com.functiondemo.ui.function.MusicVideoActivity;
 import www.function.com.functiondemo.ui.function.PhotographVideoActivity;
 import www.function.com.functiondemo.ui.function.PushActivity;
 import www.function.com.functiondemo.ui.function.ShareActivity;
-import www.function.com.functiondemo.ui.function.TwoDimensionCodeActivity;
+import www.function.com.functiondemo.ui.function.twocode.QRcodeActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private MainActivity act;
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.two_dimension_code: //二维码
-                jumpActivity(act, TwoDimensionCodeActivity.class);
+                jumpActivity(act, QRcodeActivity.class);
                 break;
             case R.id.photograph_video: //拍照/摄影
                 jumpActivity(act, PhotographVideoActivity.class);
