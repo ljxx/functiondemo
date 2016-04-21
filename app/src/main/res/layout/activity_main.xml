@@ -10,21 +10,49 @@
         style="@style/btn_textview"
         android:text="二维码"
         />
-    <Button
-        android:id="@+id/photograph_video"
-        style="@style/btn_textview"
-        android:text="拍照/录像"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/photograph"
+            style="@style/btn_textview"
+            android:layout_width="@dimen/px0"
+            android:layout_weight="1"
+            android:text="拍 照"
+            />
+        <Button
+            android:id="@+id/video"
+            style="@style/btn_textview"
+            android:layout_width="@dimen/px0"
+            android:layout_weight="1"
+            android:text="录 像"
+            />
+    </LinearLayout>
     <Button
         android:id="@+id/push_message"
         style="@style/btn_textview"
-        android:text="激光推送"
+        android:text="极光推送"
         />
-    <Button
-        android:id="@+id/music_video"
-        style="@style/btn_textview"
-        android:text="音/视频"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/play_music"
+            style="@style/btn_textview"
+            android:layout_width="@dimen/px0"
+            android:layout_weight="1"
+            android:text="音 乐"
+            />
+        <Button
+            android:id="@+id/play_video"
+            style="@style/btn_textview"
+            android:layout_width="@dimen/px0"
+            android:layout_weight="1"
+            android:text="视 频"
+            />
+    </LinearLayout>
     <Button
         android:id="@+id/communication"
         style="@style/btn_textview"

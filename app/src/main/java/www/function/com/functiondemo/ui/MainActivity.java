@@ -18,9 +18,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private MainActivity act;
 
     private Button two_dimension_code; //二维码
-    private Button photograph_video; //拍照/摄影
+    private Button photograph; //拍照
+    private Button video; //摄影
     private Button push_message; //极光推送
-    private Button music_video; //音/视频
+    private View play_music; //音乐播放
+    private Button play_video; //视频播放
     private Button communication; //即使通讯
     private Button baidu_map; //百度地图
     private Button share; //平台分享
@@ -35,17 +37,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void initView() {
         two_dimension_code = (Button) findViewById(R.id.two_dimension_code);
-        photograph_video = (Button) findViewById(R.id.photograph_video);
+        photograph = (Button) findViewById(R.id.photograph);
+        video = (Button) findViewById(R.id.video);
         push_message = (Button) findViewById(R.id.push_message);
-        music_video = (Button) findViewById(R.id.music_video);
+        play_music = findViewById(R.id.play_music);
+        play_video = (Button) findViewById(R.id.play_video);
         communication = (Button) findViewById(R.id.communication);
         baidu_map = (Button) findViewById(R.id.baidu_map);
         share = (Button) findViewById(R.id.share);
 
         two_dimension_code.setOnClickListener(this);
-        photograph_video.setOnClickListener(this);
+        photograph.setOnClickListener(this);
+        play_music.setOnClickListener(this);
+        video.setOnClickListener(this);
         push_message.setOnClickListener(this);
-        music_video.setOnClickListener(this);
+        play_video.setOnClickListener(this);
         communication.setOnClickListener(this);
         baidu_map.setOnClickListener(this);
         share.setOnClickListener(this);
@@ -57,13 +63,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.two_dimension_code: //二维码
                 jumpActivity(act, QRcodeActivity.class);
                 break;
-            case R.id.photograph_video: //拍照/摄影
+            case R.id.photograph: //拍照
                 jumpActivity(act, PhotographVideoActivity.class);
+                break;
+            case R.id.video:
+                jumpActivity(act,PhotographVideoActivity.class);
                 break;
             case R.id.push_message: //极光推送
                 jumpActivity(act, PushActivity.class);
                 break;
-            case R.id.music_video: //音/视频
+            case R.id.play_music:
+                jumpActivity(act,MusicVideoActivity.class);
+                break;
+            case R.id.play_video: //视频播放
                 jumpActivity(act, MusicVideoActivity.class);
                 break;
             case R.id.communication: //即使通讯

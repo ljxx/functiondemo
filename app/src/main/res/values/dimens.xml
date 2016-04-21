@@ -5,6 +5,8 @@
 
 
     <!--屏幕自适应大小-->
+    <dimen name="px0">0dp</dimen>
+    <dimen name="px1">1dp</dimen>
     <dimen name="px5">5dp</dimen>
     <dimen name="px10">10dp</dimen>
 
