@@ -68,4 +68,9 @@
         style="@style/btn_textview"
         android:text="平台分享"
         />
+    <Button
+        android:id="@+id/mBigImageLoading"
+        style="@style/btn_textview"
+        android:text="大图加载"
+        />
 </LinearLayout>

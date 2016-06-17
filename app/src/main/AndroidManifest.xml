@@ -2,24 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="www.function.com.functiondemo">
 
-    <!--网络权限-->
+    <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--使用振动-->
+    <!-- 使用振动 -->
     <uses-permission android:name="android.permission.VIBRATE" />
-    <!--拍照权限-->
+    <!-- 拍照权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <!--子特性。应用程序用到设备摄像头的自动对焦功能。-->
+    <!-- 子特性。应用程序用到设备摄像头的自动对焦功能。 -->
     <uses-feature android:name="android.hardware.camera.autofocus" />
-    <!--子特性。应用程序用到设备摄像头的闪光灯功能-->
+    <!-- 子特性。应用程序用到设备摄像头的闪光灯功能 -->
     <uses-feature android:name="android.hardware.camera.flash" />
-    <!--应用程序用到设备的摄像头。如果设备支持多个摄像头，程序使用背朝屏幕的那个。-->
+    <!-- 应用程序用到设备的摄像头。如果设备支持多个摄像头，程序使用背朝屏幕的那个。 -->
     <uses-feature android:name="android.hardware.camera" />
-    <!--挂载文件系统-->
+    <!-- 挂载文件系统 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <!--写入外部存储-->
+    <!-- 写入外部存储 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--使用闪光灯-->
+    <!-- 使用闪光灯 -->
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -27,7 +28,7 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
-    <!--拍照/录像-->
+    <!-- 拍照/录像 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -37,12 +38,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- sd卡读写权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.CAMERA" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -59,14 +57,15 @@
         </activity>
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.function.twocode.TwoDimensionCodeActivity" />
-        <activity android:name=".ui.function.twocode.QRcodeActivity"/>
-        <activity android:name=".ui.function.twocode.ResultScanActivity"/>
+        <activity android:name=".ui.function.twocode.QRcodeActivity" />
+        <activity android:name=".ui.function.twocode.ResultScanActivity" />
         <activity android:name=".ui.function.PhotographVideoActivity" />
         <activity android:name=".ui.function.PushActivity" />
         <activity android:name=".ui.function.MusicVideoActivity" />
         <activity android:name=".ui.function.CommunicationActivity" />
         <activity android:name=".ui.function.BaiduMapActivity" />
-        <activity android:name=".ui.function.ShareActivity"></activity>
+        <activity android:name=".ui.function.ShareActivity" />
+        <activity android:name=".ui.function.BigImageActivity"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import android.widget.Button;
 import www.function.com.functiondemo.R;
 import www.function.com.functiondemo.base.BaseActivity;
 import www.function.com.functiondemo.ui.function.BaiduMapActivity;
+import www.function.com.functiondemo.ui.function.BigImageActivity;
 import www.function.com.functiondemo.ui.function.CommunicationActivity;
 import www.function.com.functiondemo.ui.function.MusicVideoActivity;
 import www.function.com.functiondemo.ui.function.PhotographVideoActivity;
@@ -26,6 +27,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button communication; //即使通讯
     private Button baidu_map; //百度地图
     private Button share; //平台分享
+    private Button mBigImageLoading; // 大图加载
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         communication = (Button) findViewById(R.id.communication);
         baidu_map = (Button) findViewById(R.id.baidu_map);
         share = (Button) findViewById(R.id.share);
+        mBigImageLoading = (Button) findViewById(R.id.mBigImageLoading);
 
         two_dimension_code.setOnClickListener(this);
         photograph.setOnClickListener(this);
@@ -55,6 +58,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         communication.setOnClickListener(this);
         baidu_map.setOnClickListener(this);
         share.setOnClickListener(this);
+        mBigImageLoading.setOnClickListener(this);
     }
 
     @Override
@@ -86,6 +90,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.share://平台分享
                 jumpActivity(act, ShareActivity.class);
+                break;
+            case R.id.mBigImageLoading: //大图加载
+                jumpActivity(act, BigImageActivity.class);
                 break;
         }
     }
