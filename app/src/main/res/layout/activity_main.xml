@@ -73,4 +73,11 @@
         style="@style/btn_textview"
         android:text="大图加载"
         />
+    <TextView
+        android:id="@+id/wangsu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/px10"
+        android:text="网速:"
+        />
 </LinearLayout>

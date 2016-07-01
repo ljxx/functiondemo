@@ -3,6 +3,7 @@ package www.function.com.functiondemo.ui;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import www.function.com.functiondemo.R;
 import www.function.com.functiondemo.base.BaseActivity;
@@ -28,6 +29,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button baidu_map; //百度地图
     private Button share; //平台分享
     private Button mBigImageLoading; // 大图加载
+    private TextView wangsu; //显示网速
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         baidu_map = (Button) findViewById(R.id.baidu_map);
         share = (Button) findViewById(R.id.share);
         mBigImageLoading = (Button) findViewById(R.id.mBigImageLoading);
-
+        wangsu = (TextView) findViewById(R.id.wangsu);
+        wangsu.setText("");
         two_dimension_code.setOnClickListener(this);
         photograph.setOnClickListener(this);
         play_music.setOnClickListener(this);
