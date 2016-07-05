@@ -7,6 +7,7 @@
     tools:context="www.function.com.functiondemo.ui.function.slidingtab.SlidingTabActivity">
 
     <TextView
+        android:id="@+id/mTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="HOME页"
@@ -14,5 +15,9 @@
         android:textSize="20sp"
         android:gravity="center"
         />
+    <org.apache.cordova.engine.SystemWebView
+        android:id="@+id/mSystemWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

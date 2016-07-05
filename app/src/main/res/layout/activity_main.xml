@@ -71,11 +71,10 @@
     <Button
         android:id="@+id/mBigImageLoading"
         style="@style/btn_textview"
-        android:text="大图加载"
-        />
+        android:text="大图加载（Fresco）"   />
     <Button
         android:id="@+id/btn_SlidingTab"
         style="@style/btn_textview"
-        android:text="SlidingTab导航栏"
+        android:text="滑动导航/Hybrid开发（Cordora）"
         />
 </LinearLayout>

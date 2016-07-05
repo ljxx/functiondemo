@@ -35,10 +35,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.facebook.fresco:fresco:0.9.0+'
     /*  二维码.lib
-                            compile files('libs/core-3.1.0.jar')*/
+                                compile files('libs/core-3.1.0.jar')*/
     //SlidingTab框架，https://github.com/ogaclejapan/SmartTabLayout
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     //butterknife ,具体配置，参见https://github.com/JakeWharton/butterknife
     compile 'com.jakewharton:butterknife:8.1.0'
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile files('libs/cordova-5.1.1.jar')
 }
