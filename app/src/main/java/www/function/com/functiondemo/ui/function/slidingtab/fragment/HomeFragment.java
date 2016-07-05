@@ -1,5 +1,6 @@
 package www.function.com.functiondemo.ui.function.slidingtab.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -80,5 +81,11 @@ public class HomeFragment extends Fragment {
             case R.id.mSystemWebView:
                 break;
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("===HomeFragment===onActivityResult===执行啦=======");
     }
 }

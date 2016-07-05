@@ -1,20 +1,27 @@
 package www.function.com.functiondemo.ui.function.pulign;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.text.Html;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import www.function.com.functiondemo.ui.function.slidingtab.activity.DetailsActivity;
 import www.function.com.functiondemo.utils.HtmlUrl;
 
 /**
  * Created by yanglixiang on 2016/7/5.
  */
 public class Rss extends CordovaPlugin {
+
+    private CallbackContext mCallbackContext;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -42,8 +49,45 @@ public class Rss extends CordovaPlugin {
             jsonUrl.put("meta",HtmlUrl.META);
             jsonUrl.put("pub",HtmlUrl.PUB);
             callbackContext.success(jsonUrl);
+            return true;
+        } else if(HtmlUrl.RECEIVEDETAILDATA.equals(action)){
+            this.mCallbackContext = mCallbackContext;
+            Intent mIntent = new Intent(cordova.getActivity(),DetailsActivity.class);
+            mIntent.putExtra("rawArgs",rawArgs);
+            cordova.startActivityForResult(this,mIntent,1);
+            PluginResult mPlugin = new PluginResult(PluginResult.Status.NO_RESULT);
+            mPlugin.setKeepCallback(true);
+            callbackContext.sendPluginResult(mPlugin);
+            return true;
         }
         return false;
+    }
+
+    /**
+     * 第二个Activity返回时执行完后的回调接收方法
+     * @param requestCode
+     * @param resultCode
+     * @param intent
+     */
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        System.out.println("==Rss====onActivityResult===执行啦=======");
+        switch (resultCode){ //resultCode为回传的标记，我在第二个Activity中回传的是RESULT_OK
+            case Activity.RESULT_OK:
+                Bundle mBundle = intent.getExtras();
+                String rewgs = mBundle.getString("rawArgs");
+                System.out.println("===Rss===rewgs===执行啦=======:" + rewgs);
+
+                //通过PluginResult和callbackContext返回给js接口
+               /* PluginResult pluginResults = new PluginResult(PluginResult.Status.OK, str);
+                mCallbackContext.sendPluginResult(pluginResults);
+                pluginResults.setKeepCallback(true);
+                mCallbackContext.success();*/
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
