@@ -16,8 +16,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import www.function.com.functiondemo.R;
+import www.function.com.functiondemo.ui.function.slidingtab.fragment.FiveFragment;
+import www.function.com.functiondemo.ui.function.slidingtab.fragment.FourFragment;
 import www.function.com.functiondemo.ui.function.slidingtab.fragment.HomeFragment;
 import www.function.com.functiondemo.ui.function.slidingtab.fragment.SecondFragment;
+import www.function.com.functiondemo.ui.function.slidingtab.fragment.SixFragment;
 import www.function.com.functiondemo.ui.function.slidingtab.fragment.ThreeFragment;
 
 public class SlidingTabActivity extends AppCompatActivity {
@@ -39,6 +42,9 @@ public class SlidingTabActivity extends AppCompatActivity {
         fragments.add(new HomeFragment());
         fragments.add(new SecondFragment());
         fragments.add(new ThreeFragment());
+        fragments.add(new FourFragment());
+        fragments.add(new FiveFragment());
+        fragments.add(new SixFragment());
 
         if(viewPager == null){
             System.out.println("===viewPager为Null====");
@@ -59,7 +65,7 @@ public class SlidingTabActivity extends AppCompatActivity {
 
     private class MyFragmentAdapter extends FragmentPagerAdapter{
 
-        private String[] pagerTitles = {"HOME页","第二页","第三页"};
+        private String[] pagerTitles = {"HOME页","第二页","第三页","第四页","第五页","第六页"};
 
         public MyFragmentAdapter(FragmentManager fm) {
             super(fm);

@@ -42,4 +42,7 @@
     <color name="blue">#0091FF</color>
     <color name="devide_line">#CBCED2</color>
     <color name="tab_gray">#82858b</color>
+
+    <color name="text_enabled">#40C4FF</color>
+    <color name="text_disabled">#666666</color>
 </resources>
