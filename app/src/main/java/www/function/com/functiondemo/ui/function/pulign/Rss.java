@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +25,11 @@ import www.function.com.functiondemo.utils.HtmlUrl;
 public class Rss extends CordovaPlugin {
 
     private CallbackContext mCallbackContext;
+
+    @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+    }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -88,6 +96,36 @@ public class Rss extends CordovaPlugin {
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        System.out.println("===Rss===onStart===执行啦=======:");
+    }
+
+    @Override
+    public void onResume(boolean multitasking) {
+        super.onResume(multitasking);
+        System.out.println("===Rss===onResume===执行啦=======:");
+    }
+
+    @Override
+    public void onPause(boolean multitasking) {
+        super.onPause(multitasking);
+        System.out.println("===Rss===onResume===执行啦=======:");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        System.out.println("===Rss===onStop===执行啦=======:");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        System.out.println("===Rss===onDestroy===执行啦=======:");
     }
 
     @Override

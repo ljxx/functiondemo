@@ -67,7 +67,8 @@
         <activity android:name=".ui.function.ShareActivity" />
         <activity android:name=".ui.function.BigImageActivity" />
         <activity android:name=".ui.function.slidingtab.SlidingTabActivity" />
-        <activity android:name=".ui.function.slidingtab.activity.DetailsActivity"></activity>
+        <activity android:name=".ui.function.slidingtab.activity.DetailsActivity" />
+        <activity android:name=".ui.function.MainCordovaActivity"></activity>
     </application>
 
 </manifest>

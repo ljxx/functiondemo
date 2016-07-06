@@ -9,6 +9,7 @@ import www.function.com.functiondemo.base.BaseActivity;
 import www.function.com.functiondemo.ui.function.BaiduMapActivity;
 import www.function.com.functiondemo.ui.function.BigImageActivity;
 import www.function.com.functiondemo.ui.function.CommunicationActivity;
+import www.function.com.functiondemo.ui.function.MainCordovaActivity;
 import www.function.com.functiondemo.ui.function.MusicVideoActivity;
 import www.function.com.functiondemo.ui.function.PhotographVideoActivity;
 import www.function.com.functiondemo.ui.function.PushActivity;
@@ -30,6 +31,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button share; //平台分享
     private Button mBigImageLoading; // 大图加载
     private Button btn_SlidingTab; //SlidingTab导航栏
+    private Button btn_CordovaActivity; //cordovaActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         share = (Button) findViewById(R.id.share);
         mBigImageLoading = (Button) findViewById(R.id.mBigImageLoading);
         btn_SlidingTab = (Button) findViewById(R.id.btn_SlidingTab);
+        btn_CordovaActivity = (Button) findViewById(R.id.btn_CordovaActivity);
 
         two_dimension_code.setOnClickListener(this);
         photograph.setOnClickListener(this);
@@ -63,6 +66,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         share.setOnClickListener(this);
         mBigImageLoading.setOnClickListener(this);
         btn_SlidingTab.setOnClickListener(this);
+        btn_CordovaActivity.setOnClickListener(this);
     }
 
     @Override
@@ -100,6 +104,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn_SlidingTab: //SlidingTab导航栏
                 jumpActivity(act, SlidingTabActivity.class);
+                break;
+            case R.id.btn_CordovaActivity: //btn_CordovaActivity
+                jumpActivity(act, MainCordovaActivity.class);
                 break;
         }
     }
