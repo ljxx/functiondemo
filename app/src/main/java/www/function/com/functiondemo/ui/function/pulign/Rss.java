@@ -3,19 +3,33 @@ package www.function.com.functiondemo.ui.function.pulign;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CordovaWebViewEngine;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.engine.SystemWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import www.function.com.functiondemo.R;
+import www.function.com.functiondemo.ui.function.MainCordovaActivity;
 import www.function.com.functiondemo.ui.function.slidingtab.activity.DetailsActivity;
 import www.function.com.functiondemo.utils.HtmlUrl;
 
@@ -25,10 +39,14 @@ import www.function.com.functiondemo.utils.HtmlUrl;
 public class Rss extends CordovaPlugin {
 
     private CallbackContext mCallbackContext;
+    private TextView mTitle,tv_select;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+        System.out.println("==Rss==initialize===执行啦=======");
+        mTitle = (TextView) cordova.getActivity().findViewById(R.id.mTitle);
+        tv_select = (TextView) cordova.getActivity().findViewById(R.id.tv_select);
     }
 
     @Override
@@ -67,6 +85,16 @@ public class Rss extends CordovaPlugin {
             mPlugin.setKeepCallback(true);
             callbackContext.sendPluginResult(mPlugin);
             return true;
+        } else if("receiveFilterData".equals(action)){
+            System.out.println("==Rss==设置==receiveFilterData===执行啦=======");
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    tv_select.setText("我成功啦");
+                    showSetPopuWindow();
+                }
+            });
+            return true;
         }
         return false;
     }
@@ -86,12 +114,6 @@ public class Rss extends CordovaPlugin {
                 Bundle mBundle = intent.getExtras();
                 String rewgs = mBundle.getString("rawArgs");
                 System.out.println("===Rss===rewgs===执行啦=======:" + rewgs);
-
-                //通过PluginResult和callbackContext返回给js接口
-               /* PluginResult pluginResults = new PluginResult(PluginResult.Status.OK, str);
-                mCallbackContext.sendPluginResult(pluginResults);
-                pluginResults.setKeepCallback(true);
-                mCallbackContext.success();*/
                 break;
             default:
                 break;
@@ -126,6 +148,27 @@ public class Rss extends CordovaPlugin {
     public void onDestroy() {
         super.onDestroy();
         System.out.println("===Rss===onDestroy===执行啦=======:");
+    }
+
+
+    private PopupWindow mPopupWindow;
+    private LayoutInflater mInflater;
+    private void showSetPopuWindow(){
+        mInflater = LayoutInflater.from(cordova.getActivity());
+        View mView = mInflater.inflate(R.layout.set_xiangdao,null);
+        final ImageView iv_know = (ImageView) mView.findViewById(R.id.iv_know);
+        iv_know.setVisibility(View.VISIBLE);
+        //设置
+        iv_know.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mPopupWindow != null){
+                    mPopupWindow.dismiss();
+                }
+            }
+        });
+        mPopupWindow = new PopupWindow(mView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,true);
+        mPopupWindow.showAsDropDown(mView);
     }
 
     @Override

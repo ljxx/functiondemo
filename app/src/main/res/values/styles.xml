@@ -19,4 +19,12 @@
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/btn_textview_selector</item>
     </style>
+
+    <style name="cordova_activity_title">
+        <item name="android:paddingLeft">@dimen/px5</item>
+        <item name="android:paddingRight">@dimen/px5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

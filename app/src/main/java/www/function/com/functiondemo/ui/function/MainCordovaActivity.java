@@ -1,10 +1,16 @@
 package www.function.com.functiondemo.ui.function;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import org.apache.cordova.ConfigXmlParser;
 import org.apache.cordova.CordovaActivity;
@@ -18,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import www.function.com.functiondemo.R;
+import www.function.com.functiondemo.ui.function.pulign.Rss;
 import www.function.com.functiondemo.utils.HtmlUrl;
 
 public class MainCordovaActivity extends CordovaActivity {
@@ -26,6 +33,12 @@ public class MainCordovaActivity extends CordovaActivity {
     TextView mTitle;
     @BindView(R.id.mSystemWebView)
     SystemWebView mSystemWebView;
+    @BindView(R.id.tv_select)
+    TextView tvSelect;
+    @BindView(R.id.go_refresh)
+    TextView goRefresh;
+    @BindView(R.id.rl_no_net)
+    RelativeLayout rlNoNet;
 
     private CordovaWebView mCordovaWebView;
 
@@ -33,26 +46,33 @@ public class MainCordovaActivity extends CordovaActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cordova);
+        System.out.println("==MainCordovaActivity==onCreate===执行啦=======");
         ButterKnife.bind(this);
-        initView();
+        loadUrl(HtmlUrl.HOMEURL);
+        System.out.println("==MainCordovaActivity==onCreate==123=执行啦=======");
     }
 
-    /**
-     * 初始化
-     */
-    private void initView() {
-        /*ConfigXmlParser mParser = new ConfigXmlParser();
-        mParser.parse(this);
-        mCordovaWebView = new CordovaWebViewImpl(new SystemWebViewEngine(mSystemWebView));
-        mCordovaWebView.init(new CordovaInterfaceImpl(this), mParser.getPluginEntries(), mParser.getPreferences());
-        mCordovaWebView.loadUrl(HtmlUrl.HOMEURL);*/
-        loadUrl(HtmlUrl.HOMEURL);
+    @Override
+    protected CordovaWebView makeWebView() {
+        return new CordovaWebViewImpl(new SystemWebViewEngine(mSystemWebView));
+    }
+
+    @Override
+    protected void createViews() {
+        if (preferences.contains("BackgroundColor")) {
+            int backgroundColor = preferences.getInteger("BackgroundColor", Color.BLACK);
+            // Background of activity:
+            appView.getView().setBackgroundColor(backgroundColor);
+        }
+
+        appView.getView().requestFocusFromTouch();
     }
 
     @OnClick({R.id.mTitle, R.id.mSystemWebView})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.mTitle:
+                mSystemWebView.loadUrl("javascript:native('filterData','receive')");
                 break;
             case R.id.mSystemWebView:
                 break;

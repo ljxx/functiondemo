@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/white"
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/mTitle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CordovaActivity页"
-        android:padding="@dimen/px10"
-        android:textSize="20sp"
-        android:gravity="center"
-        />
+        android:layout_height="50dp"
+        android:background="@color/gray_black"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/px10" >
+
+        <TextView
+            android:id="@+id/mTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/cordova_activity_title"
+            android:text="设置" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/cordova_activity_title"
+            android:text="订阅" />
+
+        <TextView
+            android:id="@+id/tv_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/cordova_activity_title"
+            android:text="筛选" />
+    </LinearLayout>
+
     <org.apache.cordova.engine.SystemWebView
         android:id="@+id/mSystemWebView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <!--没有数据时的显示状态-->
+    <include layout="@layout/no_net_page"/>
 </LinearLayout>
