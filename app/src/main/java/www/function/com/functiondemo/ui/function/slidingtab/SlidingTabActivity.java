@@ -3,11 +3,12 @@ package www.function.com.functiondemo.ui.function.slidingtab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
@@ -24,12 +25,14 @@ import www.function.com.functiondemo.ui.function.slidingtab.fragment.SecondFragm
 import www.function.com.functiondemo.ui.function.slidingtab.fragment.SixFragment;
 import www.function.com.functiondemo.ui.function.slidingtab.fragment.ThreeFragment;
 
-public class SlidingTabActivity extends AppCompatActivity {
+public class SlidingTabActivity extends FragmentActivity {
 
     @BindView(R.id.viewpagertab)
     SmartTabLayout viewpagertab;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
+    @BindView(R.id.custom_text)
+    TextView customText;
 
     private ArrayList<Fragment> fragments;
 
@@ -38,6 +41,7 @@ public class SlidingTabActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sliding_tab);
         ButterKnife.bind(this);
+        customText.setText("滑动导航/Hybrid开发（Cordova）");
 
         fragments = new ArrayList<Fragment>();
         fragments.add(new HomeFragment());
@@ -47,7 +51,7 @@ public class SlidingTabActivity extends AppCompatActivity {
         fragments.add(new FiveFragment());
         fragments.add(new SixFragment());
 
-        if(viewPager == null){
+        if (viewPager == null) {
             System.out.println("===viewPager为Null====");
         }
         viewPager.setAdapter(new MyFragmentAdapter(getSupportFragmentManager()));
@@ -64,9 +68,9 @@ public class SlidingTabActivity extends AppCompatActivity {
         }
     }
 
-    private class MyFragmentAdapter extends FragmentPagerAdapter{
+    private class MyFragmentAdapter extends FragmentPagerAdapter {
 
-        private String[] pagerTitles = {"HOME页","第二页","第三页","第四页","第五页","第六页"};
+        private String[] pagerTitles = {"HOME页", "第二页", "第三页", "第四页", "第五页", "第六页"};
 
         public MyFragmentAdapter(FragmentManager fm) {
             super(fm);

@@ -75,7 +75,7 @@
     <Button
         android:id="@+id/btn_SlidingTab"
         style="@style/btn_textview"
-        android:text="滑动导航/Hybrid开发（Cordora）"
+        android:text="滑动导航/Hybrid开发（Cordova）"
         />
     <Button
         android:id="@+id/btn_CordovaActivity"

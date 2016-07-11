@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.util.Vector;
 
 import www.function.com.functiondemo.R;
+import www.function.com.functiondemo.base.BaseActivity;
 import www.function.com.functiondemo.ui.function.twocode.qrcode.CameraManager;
 import www.function.com.functiondemo.ui.function.twocode.qrcode.CaptureActivityHandler;
 import www.function.com.functiondemo.ui.function.twocode.qrcode.InactivityTimer;
@@ -41,7 +42,7 @@ import com.google.android.gms.common.api.GoogleApiClient;*/
 /**
  * 一定要给权限才行。
  */
-public class QRcodeActivity extends AppCompatActivity implements Callback {
+public class QRcodeActivity extends BaseActivity implements Callback {
     private Context mContext;
     // 这个类是解码与avtivity中介。解码成功，失败都用回调
     private CaptureActivityHandler handler;

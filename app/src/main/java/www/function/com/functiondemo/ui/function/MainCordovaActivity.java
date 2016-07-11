@@ -3,18 +3,11 @@ package www.function.com.functiondemo.ui.function;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.facebook.drawee.view.SimpleDraweeView;
-
-import org.apache.cordova.ConfigXmlParser;
 import org.apache.cordova.CordovaActivity;
-import org.apache.cordova.CordovaInterfaceImpl;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaWebViewImpl;
 import org.apache.cordova.engine.SystemWebView;
@@ -24,7 +17,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import www.function.com.functiondemo.R;
-import www.function.com.functiondemo.ui.function.pulign.Rss;
 import www.function.com.functiondemo.utils.HtmlUrl;
 
 public class MainCordovaActivity extends CordovaActivity {
@@ -39,6 +31,8 @@ public class MainCordovaActivity extends CordovaActivity {
     TextView goRefresh;
     @BindView(R.id.rl_no_net)
     RelativeLayout rlNoNet;
+    @BindView(R.id.custom_text)
+    TextView customText;
 
     private CordovaWebView mCordovaWebView;
 
@@ -48,6 +42,7 @@ public class MainCordovaActivity extends CordovaActivity {
         setContentView(R.layout.activity_main_cordova);
         System.out.println("==MainCordovaActivity==onCreate===执行啦=======");
         ButterKnife.bind(this);
+        customText.setText("CordovaActivity");
         loadUrl(HtmlUrl.HOMEURL);
         System.out.println("==MainCordovaActivity==onCreate==123=执行啦=======");
     }
