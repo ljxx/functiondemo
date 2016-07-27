@@ -4,109 +4,107 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import www.function.com.functiondemo.R;
 import www.function.com.functiondemo.base.BaseActivity;
 import www.function.com.functiondemo.ui.function.BaiduMapActivity;
 import www.function.com.functiondemo.ui.function.BigImageActivity;
 import www.function.com.functiondemo.ui.function.CommunicationActivity;
+import www.function.com.functiondemo.ui.function.CustomViewActivity;
 import www.function.com.functiondemo.ui.function.MainCordovaActivity;
 import www.function.com.functiondemo.ui.function.MusicVideoActivity;
 import www.function.com.functiondemo.ui.function.PhotographVideoActivity;
-import www.function.com.functiondemo.ui.function.PushActivity;
 import www.function.com.functiondemo.ui.function.ShareActivity;
+import www.function.com.functiondemo.ui.function.VoiceDiscernActivity;
 import www.function.com.functiondemo.ui.function.slidingtab.SlidingTabActivity;
 import www.function.com.functiondemo.ui.function.twocode.QRcodeActivity;
+import www.function.com.functiondemo.ui.function.twocode.TwoDimensionCodeActivity;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity {
+
     private MainActivity act;
 
-    private Button two_dimension_code; //二维码
-    private Button photograph; //拍照
-    private Button video; //摄影
-    private Button push_message; //极光推送
-    private View play_music; //音乐播放
-    private Button play_video; //视频播放
-    private Button communication; //即使通讯
-    private Button baidu_map; //百度地图
-    private Button share; //平台分享
-    private Button mBigImageLoading; // 大图加载
-    private Button btn_SlidingTab; //SlidingTab导航栏
-    private Button btn_CordovaActivity; //cordovaActivity
+    @BindView(R.id.two_dimension_code)
+    Button twoDimensionCode;
+    @BindView(R.id.photograph)
+    Button photograph;
+    @BindView(R.id.video)
+    Button video;
+    @BindView(R.id.push_message)
+    Button pushMessage;
+    @BindView(R.id.play_music)
+    Button playMusic;
+    @BindView(R.id.play_video)
+    Button playVideo;
+    @BindView(R.id.communication)
+    Button communication;
+    @BindView(R.id.baidu_map)
+    Button baiduMap;
+    @BindView(R.id.share)
+    Button share;
+    @BindView(R.id.mBigImageLoading)
+    Button mBigImageLoading;
+    @BindView(R.id.btn_SlidingTab)
+    Button btnSlidingTab;
+    @BindView(R.id.btn_CordovaActivity)
+    Button btnCordovaActivity;
+    @BindView(R.id.btn_customView)
+    Button btnCustomView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         act = this;
-        initView();
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
     }
 
-    private void initView() {
-        two_dimension_code = (Button) findViewById(R.id.two_dimension_code);
-        photograph = (Button) findViewById(R.id.photograph);
-        video = (Button) findViewById(R.id.video);
-        push_message = (Button) findViewById(R.id.push_message);
-        play_music = findViewById(R.id.play_music);
-        play_video = (Button) findViewById(R.id.play_video);
-        communication = (Button) findViewById(R.id.communication);
-        baidu_map = (Button) findViewById(R.id.baidu_map);
-        share = (Button) findViewById(R.id.share);
-        mBigImageLoading = (Button) findViewById(R.id.mBigImageLoading);
-        btn_SlidingTab = (Button) findViewById(R.id.btn_SlidingTab);
-        btn_CordovaActivity = (Button) findViewById(R.id.btn_CordovaActivity);
-
-        two_dimension_code.setOnClickListener(this);
-        photograph.setOnClickListener(this);
-        play_music.setOnClickListener(this);
-        video.setOnClickListener(this);
-        push_message.setOnClickListener(this);
-        play_video.setOnClickListener(this);
-        communication.setOnClickListener(this);
-        baidu_map.setOnClickListener(this);
-        share.setOnClickListener(this);
-        mBigImageLoading.setOnClickListener(this);
-        btn_SlidingTab.setOnClickListener(this);
-        btn_CordovaActivity.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.two_dimension_code: //二维码
+    @OnClick({R.id.two_dimension_code, R.id.photograph, R.id.video, R.id.push_message,
+            R.id.play_music, R.id.play_video, R.id.communication, R.id.baidu_map,
+            R.id.share, R.id.mBigImageLoading, R.id.btn_SlidingTab,
+            R.id.btn_CordovaActivity, R.id.btn_customView})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.two_dimension_code:
                 jumpActivity(act, QRcodeActivity.class);
                 break;
-            case R.id.photograph: //拍照
+            case R.id.photograph:
                 jumpActivity(act, PhotographVideoActivity.class);
                 break;
             case R.id.video:
-                jumpActivity(act,PhotographVideoActivity.class);
+                jumpActivity(act, PhotographVideoActivity.class);
                 break;
-            case R.id.push_message: //极光推送
-                jumpActivity(act, PushActivity.class);
+            case R.id.push_message:
+                jumpActivity(act, VoiceDiscernActivity.class);
                 break;
             case R.id.play_music:
-                jumpActivity(act,MusicVideoActivity.class);
-                break;
-            case R.id.play_video: //视频播放
                 jumpActivity(act, MusicVideoActivity.class);
                 break;
-            case R.id.communication: //即使通讯
+            case R.id.play_video:
+                jumpActivity(act, MusicVideoActivity.class);
+                break;
+            case R.id.communication:
                 jumpActivity(act, CommunicationActivity.class);
                 break;
-            case R.id.baidu_map: //百度地图
+            case R.id.baidu_map:
                 jumpActivity(act, BaiduMapActivity.class);
                 break;
-            case R.id.share://平台分享
+            case R.id.share:
                 jumpActivity(act, ShareActivity.class);
                 break;
-            case R.id.mBigImageLoading: //大图加载
+            case R.id.mBigImageLoading:
                 jumpActivity(act, BigImageActivity.class);
                 break;
-            case R.id.btn_SlidingTab: //SlidingTab导航栏
+            case R.id.btn_SlidingTab:
                 jumpActivity(act, SlidingTabActivity.class);
                 break;
-            case R.id.btn_CordovaActivity: //btn_CordovaActivity
+            case R.id.btn_CordovaActivity:
                 jumpActivity(act, MainCordovaActivity.class);
+                break;
+            case R.id.btn_customView:
+                jumpActivity(act, CustomViewActivity.class);
                 break;
         }
     }

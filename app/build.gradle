@@ -41,7 +41,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.facebook.fresco:fresco:0.9.0+'
     /*  二维码.lib
-                                    compile files('libs/core-3.1.0.jar')*/
+                                                compile files('libs/core-3.1.0.jar')*/
     //SlidingTab框架，https://github.com/ogaclejapan/SmartTabLayout
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     //butterknife ,具体配置，参见https://github.com/JakeWharton/butterknife
@@ -51,4 +51,6 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
     compile files('libs/httpmime-4.1.2.jar')
     compile files('libs/IndoorscapeAlbumPlugin.jar')
+    compile files('libs/Sunflower.jar')
+    compile files('libs/Msc.jar')
 }

@@ -1,85 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="www.function.com.functiondemo.ui.MainActivity">
-    <Button
-        android:id="@+id/two_dimension_code"
-        style="@style/btn_textview"
-        android:text="二维码"
-        />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <Button
-            android:id="@+id/photograph"
+            android:id="@+id/two_dimension_code"
             style="@style/btn_textview"
-            android:layout_width="@dimen/px0"
-            android:layout_weight="1"
-            android:text="拍 照"
+            android:text="@string/two_dimension_code"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/photograph"
+                style="@style/btn_textview"
+                android:layout_width="@dimen/px0"
+                android:layout_weight="1"
+                android:text="@string/photograph"
+                />
+            <Button
+                android:id="@+id/video"
+                style="@style/btn_textview"
+                android:layout_width="@dimen/px0"
+                android:layout_weight="1"
+                android:text="@string/video"
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/push_message"
+            style="@style/btn_textview"
+            android:text="@string/push_message"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/play_music"
+                style="@style/btn_textview"
+                android:layout_width="@dimen/px0"
+                android:layout_weight="1"
+                android:text="@string/play_music"
+                />
+            <Button
+                android:id="@+id/play_video"
+                style="@style/btn_textview"
+                android:layout_width="@dimen/px0"
+                android:layout_weight="1"
+                android:text="@string/play_video"
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/communication"
+            style="@style/btn_textview"
+            android:text="@string/communication"
             />
         <Button
-            android:id="@+id/video"
+            android:id="@+id/baidu_map"
             style="@style/btn_textview"
-            android:layout_width="@dimen/px0"
-            android:layout_weight="1"
-            android:text="录 像"
+            android:text="@string/baidu_map"
+            />
+        <Button
+            android:id="@+id/share"
+            style="@style/btn_textview"
+            android:text="@string/share"
+            />
+        <Button
+            android:id="@+id/mBigImageLoading"
+            style="@style/btn_textview"
+            android:text="@string/mBigImageLoading"   />
+        <Button
+            android:id="@+id/btn_SlidingTab"
+            style="@style/btn_textview"
+            android:text="@string/btn_SlidingTab"
+            />
+        <Button
+            android:id="@+id/btn_CordovaActivity"
+            style="@style/btn_textview"
+            android:text="@string/btn_CordovaActivity"
+            />
+
+        <Button
+            android:id="@+id/btn_customView"
+            style="@style/btn_textview"
+            android:text="@string/btn_customView"
             />
     </LinearLayout>
-    <Button
-        android:id="@+id/push_message"
-        style="@style/btn_textview"
-        android:text="极光推送"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/play_music"
-            style="@style/btn_textview"
-            android:layout_width="@dimen/px0"
-            android:layout_weight="1"
-            android:text="音 乐"
-            />
-        <Button
-            android:id="@+id/play_video"
-            style="@style/btn_textview"
-            android:layout_width="@dimen/px0"
-            android:layout_weight="1"
-            android:text="视 频"
-            />
-    </LinearLayout>
-    <Button
-        android:id="@+id/communication"
-        style="@style/btn_textview"
-        android:text="即时通讯"
-        />
-    <Button
-        android:id="@+id/baidu_map"
-        style="@style/btn_textview"
-        android:text="百度地图"
-        />
-    <Button
-        android:id="@+id/share"
-        style="@style/btn_textview"
-        android:text="平台分享"
-        />
-    <Button
-        android:id="@+id/mBigImageLoading"
-        style="@style/btn_textview"
-        android:text="大图加载（Fresco）"   />
-    <Button
-        android:id="@+id/btn_SlidingTab"
-        style="@style/btn_textview"
-        android:text="滑动导航/Hybrid开发（Cordova）"
-        />
-    <Button
-        android:id="@+id/btn_CordovaActivity"
-        style="@style/btn_textview"
-        android:text="CordovaActivity"
-        />
-</LinearLayout>
+</ScrollView>

@@ -8,4 +8,20 @@
     <string name="cancle">取消</string>
     <string name="sure">确定</string>
     <string name="scan_reuslt">扫描结果</string>
+
+    <!--MainActivity中的布局文件-->
+    <string name="two_dimension_code">二维码</string>
+    <string name="photograph">拍 照</string>
+    <string name="video">录 像</string>
+    <string name="push_message">语音识别</string>
+    <string name="play_music">音 乐</string>
+    <string name="play_video">视 频</string>
+    <string name="communication">即时通讯</string>
+    <string name="baidu_map">百度地图</string>
+    <string name="share">平台分享</string>
+    <string name="mBigImageLoading">大图加载（Fresco）</string>
+    <string name="btn_SlidingTab">滑动导航/Hybrid开发（Cordova）</string>
+    <string name="btn_CordovaActivity">CordovaActivity</string>
+    <string name="btn_customView">自定义控件</string>
+
 </resources>
