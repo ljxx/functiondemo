@@ -1,4 +1,7 @@
-package www.function.com.functiondemo.designmode.factorymode;
+package www.function.com.functiondemo.designmode;
+
+import www.function.com.functiondemo.designmode.factorymode.Location;
+import www.function.com.functiondemo.designmode.factorymode.LocationFactory;
 
 /**
  * 主函数入口
